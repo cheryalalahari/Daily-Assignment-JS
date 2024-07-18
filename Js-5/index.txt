@@ -1,0 +1,376 @@
+1. What is Javascript?
+A: Javascript is Dynamic, High level interpreted Programming Language.It is executed at Run time.
+           ------ Javascript History -------
+-> Javascript is Single threaded synchronus language.
+-> It was developed by Brendan Eich in 1995. While he was working in Netscape firm. He was chief technical officer in Morzilla corporation and later he resigned and became CEO of Brave Software.
+        -------- Overview of Javascript-------
+-> The core language of JavaScript is standardized by the ECMA TC39 committee as a language named ECMAScript.
+-> ECMAScript 14 is the current version used in JS. But we generally used ES6 or ES7 in our daily developing task. Javascript contains datatypes, loops and functions, classes but additionally we have map, filter and reduce, array, objects are been introduced to make developer life easier.
+-> Javascript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods.
+
+          The Primary use cases of JS:
+-> Javascript is mainly used for web-based applications and web browsers, games, etc .
+-> Javascript is also used in web software, and embedded hardware controls.
+-> It can also load content into a document whenever the user requires it without even reloading the entire page.
+-> Javascript uses Application Programming Interfaces(APIs) that provide extra powers to the code.
+->  It is used when a webpage is to be made dynamic and add special effects and many types of graphics.
+
+      Difference from other Programming language:
+-> Difference between javascript and other languages is javascript executed in run time and other programming language executes in compile time.
+-> It Known for its simplicity and flexibility, Javascript is often recommended for beginners. Its syntax is user-friendly, and since it’s interpreted, it allows for rapid testing and feedback.while others like C++ or Java might have more complex syntax and the need for understanding low-level programming concepts.
+
+
+
+2. What are the datatypes in Javascript?
+A: A data type is an attribute associated with a piece of data that tells a computer system how to interpret its value
+-> In Javascript data types are categorized into 2 types.  1.Primitive datatype and 2.Non-primitive datatype.
+-> The primitive datatypes include Number, String, Boolean, Null, Undefined, and Symbol. Non-primitive datatypes include Object and Array.
+
+                  -------List and Examples of each datatype--------
+Primitive DataType:
+->Primitive datatypes are also known as in-built datatypes.
+->The predefined datatypes provided by javascript language are known as primitive datatypes.
+
+i.Number: Javascript numbers are always stored in double-precision 64-bit binary format IEEE 754. 
+ex: let num = 20;
+
+ii.String: Javascript Strings are similar to sentences. They are made up of a list of characters.
+ex: const lang = 'Javascript';
+
+iii.Boolean: It represent a logical entity and have two values (true or false).
+ex: var isStudent = true;
+
+iv. Null:  manually and explicitly give the variable a empty value.
+ex: let person = null;
+
+v.Undefined: A variable has not assigned any value.
+ex: var name;
+
+vi.BigInt: BigInt is a built-in object in JavaScript that provides a integer that are not countable.
+ex: let number = BigInt(345678826738902);
+
+vii. Symbol: Symbols return unique identifiers that can be used to add unique property keys to an object.
+ex: let place = Symbol(Mumbai);
+
+Non-primitive DataType:
+->The datatypes that are derived from primitive datatypes of the javascript language are known as non-primitive datatypes. 
+->It is also known as derived datatypes or reference datatypes.
+
+i.Array : Array is an object which can store multiple data or value under one variable. 
+ex: let array = ['John', 25, true];
+
+ii.Object: It is used to store various keyed collections and more  complex entities. It forms the buiding blocks for modern javascript.
+ex: let User = {
+      name : 'John',
+      age : 45,
+      email: 'example@gmail.com',
+      isStudent: true,
+};
+
+
+3.What is the DOM?
+     ----------Defination----------
+->The DOM defines a standard for accessing documents: The Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+
+        -------------how JavaScript interacts with the DOM to manipulate web pages-----------
+->the Document Object Model (DOM) representation allows it to be manipulated. As an object-oriented representation of the web page, it can be modified with a scripting language such as JavaScript.
+->Javascript will interact with DOM using accessing and modifying methods and inbuilt keywords such as
+
+acessing Methods:
+i. document.getElementsbyTagname();
+ii.document.getElementbyId();
+iii.document.getElementsbyClassName();
+iv.document.querySelector();
+v.document.querySelectorAll();
+
+modifying Methods:
+i. document.element.innerHTML
+ii.document.element.innerText
+iii.document.element.TextContent
+
+example:<p class="item">DOM</P>
+<script>
+const item = document.getElementsbyClassName("item");
+item.innerHTML = "DOM Manipulation"
+</script>
+
+
+4.Difference between Null and Undefined:
+
+             Null                                       |                                Undefined
+1.Null is an assignment value that represents no        |       1.undefined means that a variable or object has been declared
+ value or no object.It is often used to indicate        |         but has not been assigned a value.It is the default value for 
+ that a variable has no value or that an object         |         variables that have not been initialized.
+ does not exist.                                        |                         
+                                                        |
+2.it is used in the case where                          |           2.It is used in the case where 
+variable should not conTin any value                    |             Variable and it is declared 
+ ex: var a  = null                                      |               but not provided any value
+                                                        |            and in object property is declare but not
+                                                                     provide any value.
+3.it is used in the object                              |            ex: var employee={  
+where if u want to make any property                    |                   name:"ahmad",
+value as null                                           |                  company:true,
+ex:var a={name:"james",age:40}                          |                  empcode:""}
+when u make property null                               |             console.log(employee.empcode)
+a.name=null                                             | 
+console.log(a)                                          |
+                                                        |
+4. It is used in function to return a null              |         4.It is used in function which is
+value based on a condition.                             |           defined  but not return any value
+isstudent=studentName                                   |
+ex: function findperson(person){                        |           ex:function func{var num = 21}
+    if(person==studentList){                            |             console.log(fun())      
+        return true                                     |
+    }                                                   |
+    else{                                               |
+        return null                                     |
+    }                                                   |
+}                                                       |
+
+5. What is the difference between let, const, and var?
+A: Var
+a.Var is the most ancient data variable is been used  to store a value in JS.It can be redeclared and reinitialised.That is the one of disadvantage of it.
+ex:var num = 30
+var num = 20
+Scope:
+
+1.if it is defined inside a  global scope then it can be acessed in function scope or block scope
+
+var num = 24
+
+function func(num){
+console.log(num)//24
+
+}
+func()//global scope
+2. if it is defined inside a block scope or function scope then it accessible only inside it.
+{
+var num = 5
+console.log(num)//5
+console.log(num)//undefined
+}
+  
+console.log(num)//error not accessible
+
+
+hoisting  is common error caused in var when it is called without declaration and intialisation of it.
+
+ex:console.log(num)
+var num = 5//global scope
+
+let
+b.let is the keyword which is introduced in ES6 .It can be redeclared and but cannot be reinitialised
+
+ex:let num = 15
+   num = 15
+
+
+   scope: generally let is block scoped.it is  accessible anywhere when it is defined in the global scope
+
+   let num = 15
+
+   function func(){
+    console.log(num)//15
+   }
+  
+   when it is block scoped or function scoped then it is accessible within that function or block
+
+   {
+    let b=34
+    console.log(b)//34
+   }
+   console.log(b)//error not accesible
+
+  
+   (function(a){
+    let a=23
+    
+   })("string")
+   console.log(a*a)//error not accessible
+
+temporal dead zone: if let is accessed before it is declared and intialised then it is in temporal dead zone state
+Ex:console.log(a)//TDZ
+let a=45
+
+const
+c.Const is a keyword which is introduced in ES6.It can be redeclared and reintialised.
+ex:const b=34
+console.log(b)
+
+scope:generally const is block scoped.but if it is defined in global context .It can be accessible  anywhere in the program.
+
+const b=7
+const c=(data){
+   
+    const d=Math.random(data*b)
+    console.log(d)
+}
+c(2)//14
+ 
+ If it is  in block scope or function scope.It is accessible only inside it.if it is accessed outside u will get an TDZ condition  as an error
+
+{
+    const b=6
+    console.log(b)
+}
+
+console.log(b)//TDZ error
+
+temporal dead zone: if let is accessed before it is declared and intialised then it is in temporal dead zone state
+Ex:console.log(b)//TDZ
+let b=23
+
+6.What is hoisting in JavaScript?
+->Hoisting is the default behavior in JavaScript where variable and function declarations are moved to the top of their respective scopes during the compilation phase.
+
+i. var:- variables declared with var are hoisted but not initialized, resulting in undefined when accessed before declaration.
+
+ex: console.log(name); // undefined
+let name = 'Lahari';
+
+ii. let:- let are hoisted to the top of the block scope, after hoisting variables declared with let enter a Temporal dead zone(TDZ)
+
+ex: cosole.log(a); // reference error
+   -------TDZ-------
+   -------TDZ-------
+   let a = 15;
+
+iii.const:- variables declared with const are hoisted to the top of the block during the compile phase, before the code is executed.results in reference error when accessing them before their declaration within TDZ.
+
+ex: console.log(num); // reference error
+let num = 20;
+
+7.What is the difference between == and ===?
+A:
+-----Define both == (abstract equality) and === (strict equality)-------
+
+Abstract equality: Abstract equality will attempt to resolve the data types via type coercion before making a comparison.
+Strict equality: The strict equality operator checks whether its two operands are equal, returning a Boolean result.
+without performing type coercion.
+
+---------comparision------
+The abstract equality operator uses the algorithm defined in the JavaScript specification 
+
+ex: let a = 10;
+    let b= 10;
+    console.log ( a == b); // true
+
+
+strict equality operator requires both the types and the values to match to be considered equal
+ ex: let a = 10;
+     let b = 10;
+     console.log(a === b); // false
+
+8.Explain the difference between forEach, map, filter, and reduce methods
+A: 
+-------foreach-----
+->The forEach() method calls a function for each element in an Array
+->The method is not executed for empty elements.
+ex:
+const number = [55, 24, 32, 5];
+const a = number.forEach(item);
+console.log(a);
+
+-----map----
+->map() creates a new array from calling a function for every array element.
+->it does not execute the function for empty elements and does not change the original array.
+ex:
+const fruits = ['apple', 'grapes', 'banana', 'orange'];
+const list = fruits.map(item);
+console.log(list);
+
+-----filter-----
+->The filter() method creates a new array filled with elements that pass a test provided by a function.
+-> It  does not execute the function for empty element.
+ex:
+let num = [2, 3, 5, 88, 94, 45];
+let odd = num.filter((item) => item % 2 !== 0);
+console.log(odd);
+
+-----reduce-------
+->The reduce() method executes a reducer function for array element.It returns a single value.
+Ex:
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce(function(accumulator, currentValue)=> => previousValue + currentValue, 4);
+console.log(sum);
+
+9. Explain about call, apply, and bind methods?
+A:
+i.The call method calls the function directly and sets this to the first argument passed to the call method
+->The call method doesn’t return a new function.call allows you to pass arguments individually
+
+ex: Student1={
+    name:"John",
+    age:18,
+    email: "John@example.com"
+}
+ 
+
+function DisplayDetail(rollNo, isStudent){
+    console.log("Hello inside constructor Function", this);
+    console.log(this.name + " is of age " +  this.age, rollNo., isStudent);
+}
+DisplayDetail.call(Student1, "38", "true");
+
+ii.The apply method calls the function directly and sets this to the first argument passed to the apply method 
+->In the apply method, we pass arguments in the form of an array this is only the primary difference between call and apply.
+
+ex: Student2={
+    name:"Shine",
+    age: 20,
+    email: "Shine@example.com"
+}
+
+function DisplayDetail(rollNo, isStudent){
+    console.log("Hello inside constructor Function", this);
+    console.log(this.name + " is of age " +  this.age, rollNo., isStudent);
+}
+DisplayDetail.call(Student2, ["15", "true"]);
+
+ iii.The bind method creates a new function and when that new function is called it set this keyword to the first argument which is passed to the bind method
+
+ ex: Student3:={
+    name: "Alice";
+    age: 17;
+    email: "Alice@example.com"
+ }
+ function DisplayDetail(rollNo, isStudent){
+    console.log("Hello inside constructor Function", this);
+    console.log(this.name + " is of age " +  this.age, rollNo., isStudent);
+}
+
+const displayBind = DisplayDetail.bind(Student3);
+displayBind("22", "true");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
